@@ -1,5 +1,7 @@
 package com.jerry.medalcase.Fragment;
 
+import android.graphics.Color;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.view.LayoutInflater;
@@ -73,6 +75,8 @@ public class AchievementFragment extends Fragment {
         final int HEADER = 0;
         final int DATA_CELL = 1;
         final int EMPTY_CELL = 2;
+        final int DATA_CELL_NOT_EARNED = 3;
+        
 
         ArrayList<AchievementData> data = new ArrayList<>();
 
@@ -86,12 +90,15 @@ public class AchievementFragment extends Fragment {
             if(viewType == HEADER) {
                 view = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.pager_header, parent, false);
-            } else {
+            } else if(viewType == DATA_CELL || viewType == EMPTY_CELL){
                 view = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.medal_cell, parent, false);
+            } else {
+                view = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.medal_cell_notearned, parent, false);
             }
 
-            return new MedalCaseViewHolder(view, viewType);
+            return new MedalCaseViewHolder(view);
         }
 
         public int getItemViewType (int position) {
@@ -99,7 +106,11 @@ public class AchievementFragment extends Fragment {
                 return HEADER;
             } else if(data.get(position).getDataType() == AchievementData.DataType.PersonalRecordData ||
                     data.get(position).getDataType() == AchievementData.DataType.VirtualRaceData ) {
-                return DATA_CELL;
+                if(data.get(position).getMedal().earned) {
+                    return DATA_CELL;
+                } else {
+                    return  DATA_CELL_NOT_EARNED;
+                }
             } else {
                 return EMPTY_CELL;
             }
@@ -118,7 +129,7 @@ public class AchievementFragment extends Fragment {
                 holder.title.setText(data.get(position).getHeaderTitle());
                 holder.title.setVisibility(View.VISIBLE);
                 holder.pageCount.setVisibility(View.INVISIBLE);
-            } else if(dataType == DATA_CELL) {
+            } else if(dataType == DATA_CELL || dataType == DATA_CELL_NOT_EARNED) {
                 int id = getResources().getIdentifier(data.get(position).getMedal().icon, "drawable", getContext().getPackageName());
                 holder.imageView.setImageResource(id);
                 holder.eventTitle.setVisibility(View.VISIBLE);
@@ -149,7 +160,7 @@ public class AchievementFragment extends Fragment {
         TextView eventTitle;
         TextView eventResult;
 
-        public MedalCaseViewHolder(@NonNull View itemView, int viewType) {
+        public MedalCaseViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.medalImage);
