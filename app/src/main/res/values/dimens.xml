@@ -3,4 +3,5 @@
     <dimen name="actionBar_text_size">16sp</dimen>
     <dimen name="profile_header_text_size">16sp</dimen>
     <dimen name="profile_pager_text_size">14sp</dimen>
+    <dimen name="event_text_size">12sp</dimen>
 </resources>

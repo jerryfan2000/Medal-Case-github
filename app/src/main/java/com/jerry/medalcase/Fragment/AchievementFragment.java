@@ -14,6 +14,8 @@ import com.jerry.medalcase.data.ViewModel.AchievementViewModel;
 import com.jerry.medalcase.data.gson.Achievement;
 import com.jerry.medalcase.data.utils.Utils;
 
+import org.w3c.dom.Text;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -56,10 +58,10 @@ public class AchievementFragment extends Fragment {
         recyclerView.setAdapter(medalCaseAdapter);
         achievementViewModel = new ViewModelProvider(this).get(AchievementViewModel.class);
         achievementViewModel.getAchievementLiveData()
-                .observe(getViewLifecycleOwner(), this::handleResponse);
+                .observe(getViewLifecycleOwner(), this::handleUpdate);
     }
 
-    private void handleResponse(Achievement achievement) {
+    private void handleUpdate(Achievement achievement) {
         //Populate data for grid view based on achievement
         dataArrayList = Utils.populateData(achievement);
         medalCaseAdapter.setData(dataArrayList);
@@ -119,8 +121,14 @@ public class AchievementFragment extends Fragment {
             } else if(dataType == DATA_CELL) {
                 int id = getResources().getIdentifier(data.get(position).getMedal().icon, "drawable", getContext().getPackageName());
                 holder.imageView.setImageResource(id);
+                holder.eventTitle.setVisibility(View.VISIBLE);
+                holder.eventResult.setVisibility(View.VISIBLE);
+                holder.eventResult.setText(data.get(position).getMedal().value);
+                holder.eventTitle.setText(data.get(position).getMedal().title);
             } else {
                 holder.imageView.setImageDrawable(null);
+                holder.eventTitle.setVisibility(View.INVISIBLE);
+                holder.eventResult.setVisibility(View.INVISIBLE);
             }
         }
 
@@ -138,6 +146,8 @@ public class AchievementFragment extends Fragment {
         ImageView imageView;
         TextView title;
         TextView pageCount;
+        TextView eventTitle;
+        TextView eventResult;
 
         public MedalCaseViewHolder(@NonNull View itemView, int viewType) {
             super(itemView);
@@ -145,6 +155,8 @@ public class AchievementFragment extends Fragment {
             imageView = itemView.findViewById(R.id.medalImage);
             title = itemView.findViewById(R.id.pagerHeaderTitle);
             pageCount = itemView.findViewById(R.id.pagerHeaderCount);
+            eventResult = itemView.findViewById(R.id.eventResult);
+            eventTitle = itemView.findViewById(R.id.eventTitle);
         }
     }
 

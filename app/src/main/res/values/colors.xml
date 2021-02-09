@@ -8,4 +8,5 @@
     <color name="pagerHeader">#f7f7f7</color>
     <color name="pagerHeaderTitle">#333333</color>
     <color name="pagerHeaderCount">#666666</color>
+    <color name="eventTextColor">#000000</color>
 </resources>
