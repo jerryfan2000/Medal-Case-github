@@ -76,7 +76,7 @@ public class AchievementFragment extends Fragment {
         final int DATA_CELL = 1;
         final int EMPTY_CELL = 2;
         final int DATA_CELL_NOT_EARNED = 3;
-        
+
 
         ArrayList<AchievementData> data = new ArrayList<>();
 
