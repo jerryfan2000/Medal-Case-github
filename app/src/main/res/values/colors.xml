@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#63c6d4</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="actionbarTitle">#ffffff</color>
+    <color name="pagerHeader">#f7f7f7</color>
+    <color name="pagerHeaderTitle">#333333</color>
+    <color name="pagerHeaderCount">#666666</color>
+</resources>

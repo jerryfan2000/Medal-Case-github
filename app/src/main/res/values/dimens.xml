@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="actionBar_text_right_padding">48dp</dimen>
+    <dimen name="actionBar_text_size">16sp</dimen>
+    <dimen name="profile_header_text_size">16sp</dimen>
+    <dimen name="profile_pager_text_size">14sp</dimen>
+</resources>

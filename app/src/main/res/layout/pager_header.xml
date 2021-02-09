@@ -1,0 +1,28 @@
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/pagerHeader"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/pagerHeaderTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:text="title"
+        android:textColor="@color/pagerHeaderTitle"
+        android:textSize="@dimen/profile_pager_text_size" />
+
+    <TextView
+        android:id="@+id/pagerHeaderCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:text="page count"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/pagerHeaderCount"
+        android:textSize="@dimen/profile_pager_text_size" />
+
+</LinearLayout>

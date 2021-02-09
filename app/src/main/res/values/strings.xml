@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MedalCase Test</string>
+    <string name="about">About</string>
+    <string name="profile">Profile</string>
+    <string name="currentViewing">%1 of %2</string>
+</resources>
