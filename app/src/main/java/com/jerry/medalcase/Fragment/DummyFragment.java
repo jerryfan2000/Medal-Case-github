@@ -22,8 +22,7 @@ public class DummyFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.frag_dummy, null);
-        return rootView;
+        return inflater.inflate(R.layout.frag_dummy, null);
     }
 
     @Override

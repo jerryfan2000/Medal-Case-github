@@ -1,6 +1,4 @@
 package com.jerry.medalcase.Fragment;
-
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -28,8 +26,7 @@ public class WelcomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         setupAppBar(getString(R.string.app_name));
-        View rootView = inflater.inflate(R.layout.frag_welcome, null);
-        return rootView;
+        return inflater.inflate(R.layout.frag_welcome, null);
     }
 
     @Override
@@ -40,29 +37,19 @@ public class WelcomeFragment extends Fragment {
     }
 
     private void bindUIAction() {
-        about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentFragment(v.getId());
-            }
-        });
+        about.setOnClickListener(v -> setContentFragment(v.getId()));
 
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentFragment(v.getId());
-            }
-        });
+        profile.setOnClickListener(v -> setContentFragment(v.getId()));
     }
 
     private void setContentFragment(int id) {
         Fragment switchTo;
-        String title = "";
+        String title;
         if(id == R.id.about) {
             switchTo = new AboutFragment();
             title = getString(R.string.about);
         } else if(id == R.id.profile) {
-            switchTo = new ProfileFragment();
+            switchTo = new AchievementFragment();
             title = getString(R.string.profile);
         } else {
             return;
@@ -84,7 +71,7 @@ public class WelcomeFragment extends Fragment {
         if(!title.equals(getString(R.string.app_name))) {
             textView.setPadding(0, 0, getResources().getDimensionPixelOffset(R.dimen.actionBar_text_right_padding), 0);
         }
-        textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         textView.setGravity(Gravity.CENTER);
         textView.setTextColor(getResources().getColor(R.color.actionbarTitle));
         textView.setTextSize(TypedValue.COMPLEX_UNIT_PX,

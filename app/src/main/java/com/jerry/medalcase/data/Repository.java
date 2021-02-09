@@ -221,7 +221,7 @@ public class Repository {
 
     public LiveData<Achievement> getAchievement() {
         Gson gson = new Gson();
-        MutableLiveData<Achievement> ret = new MutableLiveData<Achievement>();
+        MutableLiveData<Achievement> ret = new MutableLiveData<>();
         ret.setValue(gson.fromJson(MockData, Achievement.class));
         return ret;
     }

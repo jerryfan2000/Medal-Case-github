@@ -4,7 +4,6 @@ import com.jerry.medalcase.data.ViewModel.AchievementData;
 import com.jerry.medalcase.data.gson.Achievement;
 import com.jerry.medalcase.data.gson.Medal;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,12 +1,11 @@
 package com.jerry.medalcase.data.ViewModel;
 
-import com.jerry.medalcase.data.gson.Achievement;
 import com.jerry.medalcase.data.gson.Medal;
 
 public class AchievementData {
     public enum DataType { PersonalRecordData, VirtualRaceData, Header, EmptyCell }
     private Medal data;
-    private DataType dataType;
+    private final DataType dataType;
     private String headerTitle;
 
     private AchievementData(Medal data, DataType type) {

@@ -1,22 +1,18 @@
 package com.jerry.medalcase.Activity;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
-
-import com.jerry.medalcase.Fragment.AboutFragment;
 import com.jerry.medalcase.R;
 
 public class MainActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //By default, WelcomeFragment is added as first screen to see through activity_main.xml.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
