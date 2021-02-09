@@ -10,7 +10,8 @@ public class AchievementViewModel extends ViewModel {
 
     private final LiveData<Achievement> achievementLiveData;
 
-    public AchievementViewModel(Repository dataSrc) {
+    public AchievementViewModel() {
+        Repository dataSrc =  new Repository();
         achievementLiveData = dataSrc.getAchievement();
     }
 
