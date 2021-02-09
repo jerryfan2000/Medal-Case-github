@@ -95,6 +95,12 @@ public class Repository {
             "        \"icon\": \"virtual_5k_race\",\n" +
             "        \"title\": \"Virtual 5k\",\n" +
             "        \"value\": \"00:28:21\"\n" +
+            "      },\n" +
+            "      {\n" +
+            "        \"earned\": false,\n" +
+            "        \"icon\": \"virtual_10k_race\",\n" +
+            "        \"title\": \"Virtual 10k\",\n" +
+            "        \"value\": \"Not Yet\"\n" +
             "      }\n" +
             "    ]\n" +
             "  }\n" +
@@ -200,6 +206,7 @@ public class Repository {
         medals.add(m4);
         medals.add(m5);
         medals.add(m6);
+        medals.add(m7);
 
 
         vr.Medals = medals;

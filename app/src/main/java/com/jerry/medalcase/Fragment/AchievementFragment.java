@@ -25,10 +25,10 @@ import java.util.ArrayList;
 
 public class AchievementFragment extends Fragment {
 
-    RecyclerView recyclerView;
-    AchievementViewModel achievementViewModel;
-    MedalCaseAdapter medalCaseAdapter;
-    ArrayList<AchievementData> dataArrayList = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private AchievementViewModel achievementViewModel;
+    private MedalCaseAdapter medalCaseAdapter;
+    private ArrayList<AchievementData> dataArrayList = new ArrayList<>();
 
 
     @Override
